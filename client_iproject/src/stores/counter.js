@@ -1,7 +1,7 @@
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import axios from "axios"
-let baseUrl = "http://localhost:3000"
+let baseUrl = "https://gatekeeper-iproj.herokuapp.com"
 
 export const useCounterStore = defineStore("counter", {
   state: () => {
@@ -48,6 +48,7 @@ export const useCounterStore = defineStore("counter", {
       try {
         let response = await axios.delete(`${baseUrl}/videos?title=${videoTitle}`)
         console.log(response)
+        this.getVideos()
       } catch (err) {
         console.log(err)
       }
@@ -56,6 +57,7 @@ export const useCounterStore = defineStore("counter", {
       try {
         console.log(videoImg, videoTitle, videoUrl)
         await axios.post(`${baseUrl}/videos`, { videoUrl, videoTitle, videoImg })
+        this.getVideos()
       } catch (err) {
         console.log(err)
       }
@@ -63,6 +65,7 @@ export const useCounterStore = defineStore("counter", {
     async editVideo(videoTitle, id) {
       try {
         await axios.patch(`${baseUrl}/videos/${id}`, { videoTitle })
+        this.getVideos()
       } catch (err) {
         console.log(err)
       }

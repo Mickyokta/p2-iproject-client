@@ -21,7 +21,7 @@ export default {
                     <!-- <input type="text"
                           class="input-lg half bw-0 fw-200 bg-indigo-lightest-10 white ph-indigo-lightest focus-white opacity-80 fs-s3 py-5 min-w-25vw br-r-0"
                           placeholder="Email Address"> -->
-                    <a href="http://localhost:3000/api/auth/steam">
+                    <a href="https://gatekeeper-iproj.herokuapp.com/api/auth/steam">
                         <button
                             class="button-lg bg-indigo-lightest-20 indigo-lightest focus-white fw-300 fs-s3 mr-0 br-l-0">Get
                             Started

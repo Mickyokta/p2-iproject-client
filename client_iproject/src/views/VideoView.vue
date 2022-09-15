@@ -10,7 +10,7 @@ export default {
     computed: {
         ...mapState(useCounterStore, ["videos"])
     },
-    created() {
+    mounted() {
         this.getVideos()
     }
 }
